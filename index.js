@@ -3,12 +3,10 @@ const express = require("express");
 const db = require("./db/database");
 const cors = require("cors");
 
-
 const app = express();
 app.use(cors());
 app.use(express.json());
 const PORT = process.env.PORT || 5000;
-
 
 const customers = require("./router/customers");
 app.use("/customer", customers);
@@ -16,16 +14,20 @@ app.use("/customer", customers);
 const services = require("./router/services");
 app.use("/services", services);
 
-app.get("/", (req, res) => {
-  db.query("SELECT * FROM customer", function (err, result, fields) {
-    if (err) res.json(err);
-    res.json(result);
-  });
+const orders = require("./router/orders");
+app.use("/orders", orders);
+const cart = require("./router/cart");
+app.use("/cart", cart);
+
+app.get("/:id", (req, res) => {
+  const id  = req.params.id;
+  res.json("ABCD"+id);
 });
 
-
-
-app.listen(PORT, () => {
-  console.log(`Server is running at :${PORT}`);
+app.listen(PORT, (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(`Server is running at :${PORT}`);
+  }
 });
-
