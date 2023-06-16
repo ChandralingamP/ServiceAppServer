@@ -1,4 +1,4 @@
-// const otpGenerator = require("otp-generator");
+
 function generateOTP() {
     var digits = '0123456789';
     var OTP = '';

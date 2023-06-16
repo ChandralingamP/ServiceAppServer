@@ -37,9 +37,9 @@ router.route("/details/:type").get(async (req, res) => {
   });
 });
 
-router.route("/details/service/:serviceId").get(async (req, res) => {
+router.route("/details/service/:serviceId/:customerPhoneNumber").get(async (req, res) => {
   const serviceId = req.params.serviceId;
-  // const customerPhoneNumber = req.params.customerPhoneNumber;
+  const customerPhoneNumber = req.params.customerPhoneNumber;
   let query = `SELECT * FROM  services WHERE serviceId = '${serviceId}';`;
   db.execute(query, (err, result) => {
     if (err) {
@@ -51,14 +51,15 @@ router.route("/details/service/:serviceId").get(async (req, res) => {
         if (err) {
           res.json(err);
         } else {
-          let query = `SELECT COUNT(*) AS status FROM cart WHERE customerPhoneNumber = '9874563220' AND serviceId = '${serviceId}';`;
+          let query = `SELECT COUNT(*) AS status FROM cart WHERE customerPhoneNumber = '${customerPhoneNumber}' AND serviceId = '${serviceId}';`;
           // let query = `SELECT COUNT(*) AS serviceCount FROM cart WHERE customerPhoneNumber = '${customerPhoneNumber}' AND serviceId = '${serviceId}';`;
           db.execute(query, (err, result2) => {
             if (err) {
               return res.json(err);
             } else {
+              const status = result2[0].status > 0 ? true : false;
               res.json({
-                status: result2[0].status,
+                status: status,
                 service: result[0],
                 relatedServices: result1,
               });

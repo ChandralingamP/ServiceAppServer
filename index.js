@@ -19,9 +19,8 @@ app.use("/orders", orders);
 const cart = require("./router/cart");
 app.use("/cart", cart);
 
-app.get("/:id", (req, res) => {
-  const id  = req.params.id;
-  res.json("ABCD"+id);
+app.get("/", (req, res) => {
+  res.json("Hello My Friend");
 });
 
 app.listen(PORT, (err) => {
