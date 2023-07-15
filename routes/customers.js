@@ -54,21 +54,45 @@ router.route("/register").post(async (req, res) => {
   });
 });
 
+
+// CREATE TABLE adminpanel(
+//   adminId VARCHAR(70),
+//   adminPhoneNumber VARCHAR(10) PRIMARY KEY,
+//   adminName VARCHAR(30),
+//   adminEmail VARCHAR(100),
+//   adminOfficeaddress VARCHAR(500),
+//   adminPassword VARCHAR(50)
+//   );
+
+
 router
   .route("/login/:customerPhoneNumber/:customerPassword")
   .get(async (req, res) => {
-    const customerPhoneNumber = req.params.customerPhoneNumber;
-    const customerPassword = req.params.customerPassword;
-    // res.status(200).json({customerPassword:customerPassword,customerPhoneNumber:customerPhoneNumber});
-    let query = `SELECT customerPassword from customer WHERE customerPhoneNumber = ${customerPhoneNumber};`;
+    const phoneNumber = req.params.customerPhoneNumber;
+    const password = req.params.customerPassword;
+    //checking isAdmin 
+    let query = `SELECT * from adminpanel WHERE adminPhoneNumber = ${phoneNumber} LIMIT 1;`;
     db.execute(query, (err, result) => {
+      console.log(result?.length > 0 && result[0].adminPassword == password);
       if (err) {
         res.status(400).json(err);
       } else {
-        if (result[0].customerPassword == customerPassword) {
-          res.status(200).json({ msg: true, customerDetails: result });
+        if (result?.length > 0 && result[0].adminPassword == password) {
+          res.json({ admin: true, msg: true, adminDetails: result });
         } else {
-          res.status(200).json({ msg: false });
+          let query = `SELECT * from customer WHERE customerPhoneNumber = ${phoneNumber} LIMIT 1;`;
+          db.execute(query, (err, result1) => {
+            console.log(result1);
+            if (err) {
+              res.status(400).json(err);
+            } else {
+              if (result1?.length > 0 && result1[0].customerPassword == password) {
+                res.status(200).json({ admin: false, msg: true, customerDetails: result1[0] });
+              } else {
+                res.status(200).json({ msg: false });
+              }
+            }
+          });
         }
       }
     });
@@ -78,11 +102,11 @@ router.route("/details").put(async (req, res) => {
   const data = req.body;
   let id = uniqueId(
     data.customerPhoneNumber +
-      data.customerEmail +
-      data.customerCity +
-      data.customerAddressLine1 +
-      data.customerAddressLine2 +
-      data.customerPincode
+    data.customerEmail +
+    data.customerCity +
+    data.customerAddressLine1 +
+    data.customerAddressLine2 +
+    data.customerPincode
   );
   let addressUpdateQuery = `INSERT INTO customerAddress (customerAddressId, customerPhoneNumber, customerAddressLine1, customerAddressLine2, customerLandmark, customerCity, customerPincode) VALUES ('${id}', '${data.customerPhoneNumber}', '${data.customerAddressLine1}', '${data.customerAddressLine2}', '${data.customerLandmark}', '${data.customerCity}', ${data.customerPincode});`;
   try {
@@ -106,10 +130,51 @@ router.route("/details").put(async (req, res) => {
   }
 });
 
+router.route('/edit-profile').put((req, res) => {
+  const { name, email, phone, id } = req.body;
+  let customerUpdateQuery = `UPDATE customer SET customerName = '${name}', customerEmail  = '${email}', customerPhoneNumber = '${phone}' WHERE customerId  = '${id}';`;
+  db.execute(customerUpdateQuery, function (err, result) {
+    if (err) {
+      console.log(err);
+      res.status(400).json(err);
+    } else {
+      res.status(200).json(result);
+    }
+  });
+});
+
+router.route('/addresses/:phone').get((req, res) => {
+  const phone = req.params.phone;
+  let query = `SELECT * FROM customerAddress WHERE customerPhoneNumber='${phone}';`;
+  db.execute(query, (err, result) => {
+    if (err) {
+      res.status(400).json(err);
+    } else {
+      res.status(200).json(result);
+    }
+  });
+});
+
+
+router.route('/password').put((req, res) => {
+  const { customerPassword, customerPhoneNumber } = req.body;
+  let query = `UPDATE customer SET customerPassword='${customerPassword}' WHERE customerPhoneNumber = '${customerPhoneNumber}';`;
+  db.execute(query, (err, result) => {
+    if (err) {
+      res.status(400).json(err);
+    } else {
+      res.status(200).json({ msg: true });
+    }
+  })
+});
+
+
 router.route("/details").get((req, res) => {
-  db.execute(`select * from customerAddress;`, (err, result) => {
+  db.execute(`select * from customer;`, (err, result) => {
     res.json(result);
   });
 });
+
+
 
 module.exports = router;

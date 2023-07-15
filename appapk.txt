@@ -1,0 +1,117 @@
+appapk SQL queries
+
+CREATE DATABASE appapk;
+USE appapk;
+
+CREATE TABLE customer(
+customerId VARCHAR(70) PRIMARY KEY,
+customerPhoneNumber VARCHAR(10),
+customerPassword VARCHAR(50),
+customerName VARCHAR(50),
+customerEmail VARCHAR(100),
+customerAddressId VARCHAR(70),
+customerOrderCount MEDIUMINT
+);
+
+
+CREATE TABLE customerAddress(
+customerAddressId VARCHAR(70) PRIMARY KEY,
+customerPhoneNumber VARCHAR(10),
+customerAddressLine1 VARCHAR(80),
+customerAddressLine2 VARCHAR(80),
+customerLandMark VARCHAR(80),
+customerCity VARCHAR(50),
+customerPincode MEDIUMINT
+);
+
+CREATE TABLE services(
+serviceId VARCHAR(70) PRIMARY KEY,
+serviceType VARCHAR(80),
+serviceCategory VARCHAR(80),
+serviceDescription VARCHAR(500),
+servicePrice FLOAT,
+servicePricediscount FLOAT,
+serviceRating FLOAT,
+serviceImagefile VARCHAR(255)
+);
+
+CREATE TABLE providerHelper(
+orderId VARCHAR(70),
+providerId VARCHAR(70) PRIMARY KEY,
+providerStatus ENUM('active', 'inactive', 'pending'),
+helperId1 VARCHAR(70),
+helperId2 VARCHAR(70),
+helperId3 VARCHAR(70),
+helperId4 VARCHAR(70),
+helperId5 VARCHAR(70)
+);
+
+CREATE TABLE adminpanel(
+adminId VARCHAR(70),
+adminPhoneNumber VARCHAR(10) PRIMARY KEY,
+adminName VARCHAR(30),
+adminEmail VARCHAR(100),
+adminOfficeaddress VARCHAR(500),
+adminPassword VARCHAR(50)
+);
+
+CREATE TABLE providerMaster(
+providerId VARCHAR(70) PRIMARY KEY,
+providerPhoneNumber VARCHAR(10),
+providerName VARCHAR(50),
+providerAadharnumber VARCHAR(12),
+providerPermanantaddress VARCHAR(500),
+providerServiceCount MEDIUMINT,
+providerRating INT,
+providerPhotofile VARCHAR(255),
+providerAadharphoto VARCHAR(255),
+providerRole VARCHAR(50)
+);
+
+// CREATE TABLE cart(
+//     cartId VARCHAR(64),
+//     customerPhoneNumber VARCHAR(10),
+//     serviceId VARCHAR(64),
+//     initialPayStatus Boolean
+//     );
+
+
+CREATE TABLE orders(
+orderId VARCHAR(70) PRIMARY KEY,
+customerPhoneNumber VARCHAR(10),
+serviceId VARCHAR(70),
+customerAddressId VARCHAR(70),
+orderStatus ENUM('orderplaced', 'rejected', 'pending'),
+providerId VARCHAR(70),
+customerOtp INT,
+serviceSlotTime TINYTEXT,
+serviceStartTime TIME,
+serviceEndTime TIME,
+additionalCharges FLOAT,
+customerConfirmationAdditionalCharges BOOLEAN,
+providerConfirmationAdditionalCharges BOOLEAN,
+additionalpayStatus ENUM('paid', 'not_paid', 'pending'),
+refundRequestStatus Boolean,
+refundPaidStatus Boolean
+);
+
+CREATE TABLE helper(
+helperId VARCHAR(70) PRIMARY KEY,
+helperPhoneNumber VARCHAR(10),
+helperName VARCHAR(50),
+helperAadharnumber VARCHAR(12),
+helperPermanantaddress VARCHAR(500),
+helperServiceCount MEDIUMINT,
+helperPhotofile VARCHAR(255),
+helperAadharphoto VARCHAR(255)
+);
+
+CREATE TABLE feedback(
+orderId VARCHAR(70) PRIMARY KEY,
+customerId VARCHAR(70),
+comments VARCHAR(500),
+providerId VARCHAR(70),
+serviceRating INT,
+providerRating INT
+);
+

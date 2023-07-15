@@ -1,0 +1,19 @@
+adminpanel appapk
+
+
+INSERT INTO adminpanel (adminId, adminPhoneNumber, adminName, adminEmail, adminOfficeaddress, adminPassword)
+VALUES ('4439', '9888777721', 'Anandhu', 'Anandhu@g.com', 'Near KFC,AshokNagar,Chennai', 600021);
+
+UPDATE adminpanel SET adminPhoneNumber = '9444493333' WHERE adminId = '4439';
+
+UPDATE adminpanel SET adminName = 'Ramesh' WHERE adminId = '4439';
+
+UPDATE adminpanel SET adminEmail = 'Ramesh@gee.com' WHERE adminId = '4439';
+
+UPDATE adminpanel SET adminOfficeaddress = 'Egmore, Chennai' WHERE adminId = '4439';
+
+UPDATE adminpanel SET adminPassword = '600004' WHERE adminId = '4439';
+
+UPDATE adminpanel SET adminName = 'Ramesh', adminPhoneNumber = '9444493333',
+ adminEmail = 'Ramesh@gee.com', adminOfficeaddress = 'Egmore, Chennai',
+ adminPassword = '600004' WHERE adminId = '4439';

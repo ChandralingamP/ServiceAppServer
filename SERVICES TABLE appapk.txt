@@ -1,0 +1,104 @@
+SERVICES TABLE appapk
+
+INSERT INTO services (serviceId, serviceType, serviceCategory, serviceDescription, servicePrice, servicePricediscount, serviceRating, serviceImagefile)
+VALUES ('8c3ff96221f76037dc7a2ed9264dd12b12ffdc7ad4ee8f63b55416998c78d404','AC', 'Deep Clean Window AC Service',
+ 'Deep cleaning a Window AC helps ensure optimal performance and clean indoor air quality. It involves removing and cleaning the air filters, cleaning the cover components, clearing the condensate drain, and cleaning the vents. Providing gentle and responsible cleaning to avoid damaging any sensitive components. Regular deep cleaning helps prolong the lifespan of your AC unit and ensures efficient cooling and cleaner air in your space.',
+ '900', '10', '0', 'split_ac.jpg');
+
+INSERT INTO services (serviceId, serviceType, serviceCategory, serviceDescription, servicePrice, servicePricediscount, serviceRating, serviceImagefile)
+VALUES ('21cc55b23d8a40afac3554945c33199f0a8445d8b25f6475ed2b62ae1d7c24a3','AC', 'Deep Clean Split AC Service',
+ 'Deep cleaning a Split AC helps ensure optimal performance and clean indoor air quality. It involves removing and cleaning the air filters, cleaning the indoor unit components, clearing the condensate drain, and cleaning the outdoor unit. Providing gentle and responsible cleaning to avoid damaging any sensitive components. Regular deep cleaning helps prolong the lifespan of your AC unit and ensures efficient cooling and cleaner air in your space.',
+ '1000', '10', '0', 'split_ac.jpg');
+
+INSERT INTO services (serviceId, serviceType, serviceCategory, serviceDescription, servicePrice, servicePricediscount, serviceRating, serviceImagefile)
+VALUES ('5f479960230f669b83a427e0802a400bb94d2388ebaac1c90c037fd28ef094ca','AC', 'Anti-rust deep clean AC service',
+ 'Anti-rust deep clean AC service is a specialized maintenance procedure designed to prevent and remove rust buildup in an air conditioning unit. Rust can corrode the components of the AC, leading to reduced performance and potential breakdowns.During the service, the technician will thoroughly clean the AC unit, paying particular attention to areas prone to rust, such as coils, fins, and metal parts and also apply anti-rust treatments or coatings to protect the unit from future corrosion. This service helps prolong the lifespan of the AC, ensures optimal performance, and reduces the risk of costly repairs. By addressing rust-related issues proactively, the AC can continue to provide efficient cooling and improve indoor air quality.',
+ '1200', '10', '0', 'split_ac.jpg');
+
+INSERT INTO services (serviceId, serviceType, serviceCategory, serviceDescription, servicePrice, servicePricediscount, serviceRating, serviceImagefile)
+VALUES ('30c12c44244265e687d4c76d864b1a529ec75a74f746152df93f798fbe135261','AC', 'Split/Window AC repair',
+ 'AC repair is a professional service that addresses issues and malfunctions in an air conditioning system. When your AC is not cooling properly, making strange noises, or experiencing any other problems, it is the time to call in an AC repair technician. They will diagnose the issue, which could be related to faulty components, refrigerant leaks, electrical problems, or other factors. The technician will then proceed to fix the problem, which may involve replacing parts, repairing wiring, or recharging the refrigerant. AC repair ensures that your system operates efficiently, provides optimal cooling, and helps maintain a comfortable indoor environment. It is recommended to seek professional assistance for AC repair to ensure safety, proper diagnosis, and reliable solutions.',
+ '700', '10', '0', 'split_ac.jpg');
+
+INSERT INTO services (serviceId, serviceType, serviceCategory, serviceDescription, servicePrice, servicePricediscount, serviceRating, serviceImagefile)
+VALUES ('9bcf5957ec27a03c87ce5c7590335f24d35fdbffd4652983e0c1ef33c6746955', 'AC', 'Gas Leakage and Refill',
+ 'AC gas leakage and refill are common issues that can affect the performance of an air conditioning system. When an AC unit experiences a refrigerant (commonly referred to as "gas") leakage, it can result in reduced cooling capacity and inefficient operation. Detecting the leakage requires the expertise of a professional technician who will inspect the AC system, identify the source of the leak, and repair it accordingly. Once the leakage is fixed, the technician will evacuate any remaining refrigerant from the system. Afterward, they will recharge the AC unit with the appropriate amount of refrigerant according to the manufacturer specifications.',
+ '3200', '5', '0', 'split_ac.jpg');
+
+INSERT INTO services (serviceId, serviceType, serviceCategory, serviceDescription, servicePrice, servicePricediscount, serviceRating, serviceImagefile)
+VALUES ('a9433c5119c7665783084e30488cbadf7cad417dfeb7b2db90c159e03be1612d', 'AC', 'AC Installation',
+ 'AC installation involves the professional setup of an air conditioning system in a residential or commercial space. A trained technician begins by assessing the area to determine the appropriate AC capacity and ideal placement for the indoor and outdoor units. They consider factors such as room size, insulation, and ventilation to ensure optimal performance. Based on the assessment, the technician selects the suitable AC unit and additional components needed for installation. Pre-installation preparations are made, including electrical wiring, mounting brackets, and necessary supports. The indoor and outdoor units, along with the connecting refrigerant lines, are installed following manufacturer guidelines and industry standards. The technician ensures secure connections and proper insulation to prevent leaks. Electrical connections are made according to local codes, with a focus on safety. After installation, the technician tests the system, checking for refrigerant leaks, proper airflow, temperature control, and overall functionality. They provide user instructions on operating and maintaining the AC system.',
+ '2000', '5', '0', 'split_ac.jpg');
+
+INSERT INTO services (serviceId, serviceType, serviceCategory, serviceDescription, servicePrice, servicePricediscount, serviceRating, serviceImagefile)
+VALUES ('81c1c779b50f900fae886dd8d202b1eade5cb1f8f789344f76a5fb47ea2586f5', 'AC', 'AC Uninstallation',
+ 'AC uninstallation involves the careful and systematic removal of an air conditioning system from a residential or commercial space. To begin, it is important to disconnect the power supply to the AC unit to ensure safety. The indoor unit is then carefully dismantled, which includes disconnecting electrical connections, thermostat wiring, and any additional components connected to it. The outdoor unit is also detached by disconnecting electrical connections, refrigerant lines, and removing any mounting brackets or supports. If the AC system contains refrigerant, it must be handled responsibly and in compliance with local regulations. A professional technician will properly recover or evacuate the refrigerant to prevent any environmental harm. After the units are removed, any holes or openings left behind are patched, and refrigerant line openings are sealed to ensure the integrity of the space.',
+ '800', '5', '0', 'split_ac.jpg');
+
+
+
+
+INSERT INTO services (serviceId, serviceType, serviceCategory, serviceDescription, servicePrice, servicePricediscount, serviceRating, serviceImagefile)
+VALUES ('b1729fe17af09c2144396cfa1ff767fe93ae07f7903e8a52085b8067a22445eb', 'Electrical', 'Installation of equipment',
+ 'Electrical equipment installation refers to the process of setting up various electrical devices and systems in a residential, commercial, or industrial setting. It involves the proper placement, wiring, and connection of electrical components to ensure safe and reliable operation. Proper wiring and connection of electrical equipment are critical for safe and efficient operation.Once the installation is complete and all tests are successfully conducted, the electrical system is commissioned for operation. ',
+ '400', '10', '0', 'split_ac.jpg');
+
+INSERT INTO services (serviceId, serviceType, serviceCategory, serviceDescription, servicePrice, servicePricediscount, serviceRating, serviceImagefile)
+VALUES ('4895eec799c781da3faea53be02290c6262e94379c3141513ea5494853d4394d', 'Electrical', 'Power / Data Points',
+ 'Power and data points refer to electrical outlets and network/data connections in a building or workspace. They are essential components of infrastructure that provide access to electricity and data communication.During installation, power and data points are strategically placed to ensure convenient access and efficient distribution of power and data connections.Proper installation and wiring of power and data points are critical to ensure reliable electrical supply and seamless data communication.',
+ '500', '10', '0', 'split_ac.jpg');
+
+INSERT INTO services (serviceId, serviceType, serviceCategory, serviceDescription, servicePrice, servicePricediscount, serviceRating, serviceImagefile)
+VALUES ('57e5555f00eb3e50a3f8bd18b6bec44005991da3f24f4778472d33047e1adfed', 'Electrical', 'TV and internet point installation',
+ 'TV and internet point installation involves the setup of connections for television and internet services in a residential or commercial space. A technician assesses the requirements, including the number of TVs, desired placement, and internet speed needs. They install TV points or outlets, running coaxial cables from a central distribution point to each location. For internet connectivity, network/data points or outlets are installed, with network cables run from a central network distribution point. The technician then sets up the connections, ensuring devices are properly linked to their respective outlets and configuring routers or modems for internet access. Testing is conducted to verify signal strength, picture quality, and internet connectivity, and user instructions may be provided.',
+ '600', '10', '0', 'split_ac.jpg');
+
+INSERT INTO services (serviceId, serviceType, serviceCategory, serviceDescription, servicePrice, servicePricediscount, serviceRating, serviceImagefile)
+VALUES ('d56f788c112ca200e8c52682662a59a41e2ba2c302a61426516409d1d56e9385', 'Electrical', 'Fuse replacements',
+ 'Fuse replacement refers to the process of replacing a faulty or blown fuse in an electrical circuit. Fuses are safety devices that protect electrical systems from overload or short circuits by breaking the circuit when excessive current flows through them. When a fuse blows, it interrupts the electrical flow and prevents damage to the circuit or connected devices. ',
+ '200', '10', '0', 'split_ac.jpg');
+
+INSERT INTO services (serviceId, serviceType, serviceCategory, serviceDescription, servicePrice, servicePricediscount, serviceRating, serviceImagefile)
+VALUES ('e486792217c5d7c9763efc9f71102978910d14eaa2b7c34ac61926129c46253b', 'Electrical', 'Repair of switchboards',
+ 'Switchboard repair involves the identification and resolution of issues with the electrical panel or distribution board in a building. Our electrician assesses the switchboard, diagnosing problems such as circuit breaker tripping, loose connections, or damaged components. They replace faulty components and repair wiring connections, ensuring proper insulation and labeling for safety. Safety checks are conducted to verify secure connections and adherence to electrical codes. The repaired switchboard undergoes functionality testing to ensure proper distribution of electricity',
+ '300', '10', '0', 'split_ac.jpg');
+
+
+
+
+INSERT INTO services (serviceId, serviceType, serviceCategory, serviceDescription, servicePrice, servicePricediscount, serviceRating, serviceImagefile)
+VALUES ('51967d7ccffbe83ede1a171682cad3c067802d6853eaa83429c6a22b1d3b5846', 'Plumbing', 'Fixing Leakage',
+ 'Fixing plumbing leakage involves identifying and resolving any leaks in the plumbing system to prevent water damage and restore proper functioning. The process of detecting the source of the leak, which can be done through visual inspection or specialized tools. Once located, the water supply to the affected area or the entire system is shut off to prevent further leakage. Repairing small leaks may involve replacing washers, seals, or other faulty components. Joints or connections may require tightening, replacement, or the use of sealing compounds. After completing the repair, the water supply is turned back on, and the area is thoroughly tested for any signs of leakage. Cleanup and restoration follow, addressing any water damage and returning the area to its original condition.',
+ '500', '10', '0', 'split_ac.jpg');
+
+INSERT INTO services (serviceId, serviceType, serviceCategory, serviceDescription, servicePrice, servicePricediscount, serviceRating, serviceImagefile)
+VALUES ('1c4a5dfdb4c69c6def950646940b02b6662d3a65e305c62171db841d61d2bdb6', 'Plumbing', 'Drainage Cleaning',
+ 'Drainage cleaning is the essential process of removing blockages and debris from drains and pipes to ensure smooth and efficient water flow. Our Professional plumbers inspect the drainage system to locate and identify the cause of the blockage, utilizing specialized tools such as cameras and probes for a thorough assessment. Blockages are then removed using techniques like plungers, drain snakes, or hydro jetting, depending on the severity of the clog. Additionally, pipe cleaning is performed to eliminate any remaining debris or buildup on the pipe walls, improving the overall flow efficiency and preventing future blockages. Plumbers may also provide maintenance recommendations to help homeowners prevent clogs, such as proper waste disposal practices and regular drain cleaning schedules. Drainage cleaning plays a crucial role in maintaining functional and healthy plumbing systems.',
+ '1800', '10', '0', 'split_ac.jpg');
+
+INSERT INTO services (serviceId, serviceType, serviceCategory, serviceDescription, servicePrice, servicePricediscount, serviceRating, serviceImagefile)
+VALUES ('deaac1a3b66af0742de728e82d791506c0f68917655fc7c11edafab9e716f2b6', 'Plumbing', 'Bathroom repair',
+ 'Bathroom repair encompasses a range of tasks aimed at fixing and restoring various elements within a bathroom. It involves addressing issues such as leaky faucets, malfunctioning toilets, damaged tiles, or faulty plumbing. The repair process begins with identifying the specific problem, whether it is a dripping faucet, a running toilet, or a broken tile. Professional plumbers and technicians then assess the severity of the issue and determine the appropriate solution. This may involve replacing faulty components, fixing leaks, resealing tiles, repairing or replacing plumbing fixtures, or resolving drainage problems. Bathroom repair often requires specialized tools and expertise to ensure that the repairs are done correctly and to prevent further damage. Once the necessary repairs are completed, the bathroom is restored to its original functionality and aesthetic appeal. Regular bathroom maintenance is crucial to prevent future issues and extend the lifespan of the fixtures and plumbing systems.',
+ '1800', '10', '0', 'split_ac.jpg');
+
+INSERT INTO services (serviceId, serviceType, serviceCategory, serviceDescription, servicePrice, servicePricediscount, serviceRating, serviceImagefile)
+VALUES ('831878b36eac0ddf7f138d53bb4d5e686adf8f60bd8f2ef7795f26140919d18f', 'Plumbing', 'Fixing new tap connection',
+ 'Fixing a new tap connection involves the installation of a new faucet or tap in a plumbing system. Our plumber will then assess the existing plumbing connections and determine the appropriate method for installing the new tap. This may involve removing the old tap, cleaning the area, and preparing it for the installation. The new tap is carefully aligned and securely connected to the plumbing system using appropriate fittings and seals. Plumber will ensure that all connections are tight and leak-free. Once the tap is installed, plumber will test the tap for proper functionality and any potential leaks.',
+ '300', '10', '0', 'split_ac.jpg');
+
+INSERT INTO services (serviceId, serviceType, serviceCategory, serviceDescription, servicePrice, servicePricediscount, serviceRating, serviceImagefile)
+VALUES ('428a5b9e135f19af798abf9da16e0e531d7903f26a87e0d30bb99b75d758a8df', 'Plumbing', 'Water Heaters',
+ 'Water heater installation and repair involve the proper setup and maintenance of a hot water system in a building. The process begins with selecting the appropriate type and size of water heater based on the specific needs and requirements of the space. Our professional plumber will then assess the location for installation, ensuring proper ventilation, access to plumbing connections, and compliance with safety regulations. The existing plumbing connections may need to be modified or extended to accommodate the new water heater. The installation includes connecting the water heater to the water supply line, installing necessary valves, fittings, and safety devices, and properly securing the unit in place. Once installed, the water heater is tested for functionality, and adjustments are made as needed. In terms of repair, common issues with water heaters include faulty thermostats, heating elements, or pressure relief valves, as well as leaks or sediment buildup. Repairing these issues may involve replacing damaged components, cleaning or flushing the tank, or addressing plumbing connections.',
+ '400', '10', '0', 'split_ac.jpg');
+
+
+
+SELECT * FROM services;
+
+SELECT * FROM services WHERE serviceType = 'AC';
+
+SELECT * FROM services WHERE serviceType = 'Electrical';
+
+SELECT * FROM services WHERE serviceType = 'Plumbing';
+
+UPDATE services SET serviceRating = 4.5 WHERE serviceId = '8c3ff96221f76037dc7a2ed9264dd12b12ffdc7ad4ee8f63b55416998c78d404';

@@ -1,0 +1,28 @@
+feedback appapk
+
+
+INSERT INTO feedback (orderId, customerId, comments, 
+providerId, serviceRating, providerRating)
+VALUES ('600222', '11223301', 'Best service with Quality products', '880001', 3.5, 4);
+
+
+UPDATE feedback SET customerId = '11223322' WHERE orderId = '600222';
+
+UPDATE feedback SET comments = 'GOOD' WHERE orderId = '600222';
+
+UPDATE feedback SET providerId = '880022' WHERE orderId = '600222';
+
+UPDATE feedback SET serviceRating = '3.9' WHERE orderId = '600222';
+
+UPDATE feedback SET providerRating = '2.9' WHERE orderId = '600222';
+
+
+
+UPDATE feedback SET customerId = '11223322', comments = 'GOOD',
+ providerId = '880022', serviceRating = '3.9',
+ providerRating = '2.9' WHERE orderId = '600222';
+
+
+SELECT * FROM feedback WHERE orderId = '600222';
+
+SELECT * FROM feedback WHERE customerId = '11223322';

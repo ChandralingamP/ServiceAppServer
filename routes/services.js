@@ -45,28 +45,28 @@ router.route("/details/service/:serviceId/:customerPhoneNumber").get(async (req,
     if (err) {
       res.json(err);
     } else {
-      let a = result[0].serviceType;
-      let query1 = `SELECT * FROM  services WHERE serviceType = '${a}' AND serviceId <> '${serviceId}' ;`;
-      db.execute(query1, (err, result1) => {
-        if (err) {
-          res.json(err);
-        } else {
-          let query = `SELECT COUNT(*) AS status FROM cart WHERE customerPhoneNumber = '${customerPhoneNumber}' AND serviceId = '${serviceId}';`;
-          // let query = `SELECT COUNT(*) AS serviceCount FROM cart WHERE customerPhoneNumber = '${customerPhoneNumber}' AND serviceId = '${serviceId}';`;
-          db.execute(query, (err, result2) => {
-            if (err) {
-              return res.json(err);
-            } else {
-              const status = result2[0].status > 0 ? true : false;
-              res.json({
-                status: status,
-                service: result[0],
-                relatedServices: result1,
-              });
-            }
-          });
-        }
-      });
+        let a = result[0].serviceType;
+        let query1 = `SELECT * FROM  services WHERE serviceType = '${a}' AND serviceId <> '${serviceId}' ;`;
+        db.execute(query1, (err, result1) => {
+          if (err) {
+            res.json(err);
+          } else {
+            let query = `SELECT COUNT(*) AS status FROM cart WHERE customerPhoneNumber = '${customerPhoneNumber}' AND serviceId = '${serviceId}';`;
+            // let query = `SELECT COUNT(*) AS serviceCount FROM cart WHERE customerPhoneNumber = '${customerPhoneNumber}' AND serviceId = '${serviceId}';`;
+            db.execute(query, (err, result2) => {
+              if (err) {
+                return res.json(err);
+              } else {
+                const status = result2[0].status > 0 ? true : false;
+                res.json({
+                  status: status,
+                  service: result[0],
+                  relatedServices: result1,
+                });
+              }
+            });
+          }
+        });
     }
   });
 });
